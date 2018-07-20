@@ -25,7 +25,7 @@ RUN apt-get install -qq -y build-essential clang python-dev jam libicu-dev libbz
 
 RUN cd $BOOST_BUILD_DIR && ./bootstrap.sh --prefix=/usr --libdir=/usr/lib/x86_64-linux-gnu --with-toolset=clang
 RUN cd $BOOST_BUILD_DIR && ./b2 -j8 toolset=clang cxxflags="-stdlib=libstdc++ -fPIC" cflags="-fPIC" linkflags="-stdlib=libstdc++"
-RUN cd $BOOST_BUILD_DIR && ./b2 install
+RUN cd $BOOST_BUILD_DIR && ./b2 install 1>/dev/null
 
 ENV BOOST_REINSTALL_FILE     ${BOOST_BUILD_DIR}/reinstall
 
