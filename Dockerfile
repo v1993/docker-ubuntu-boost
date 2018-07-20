@@ -1,5 +1,5 @@
 # Version: 0.1.0
-FROM ubuntu:latest
+FROM ubuntu:rolling
 MAINTAINER Valeri Ochinski <v19930312@gmail.com>
 
 ENV BOOST_VERSION_DOT        1.67.0
