@@ -18,9 +18,3 @@ script:
 deploy:
   provider: script
   script: bash docker_push
-  on:
-    branches:
-      only:
-        - master
-        - rolling
-        - baseimage
