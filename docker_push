@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-test $TRAVIS_BRANCH = "master"  && docker push vyo2003/ubuntu-boost:latest
-test $TRAVIS_BRANCH = "rolling" && docker push vyo2003/ubuntu-boost:rolling
-test $TRAVIS_BRANCH = "baseimage" && docker push vyo2003/ubuntu-boost:baseimage
+test $TRAVIS_BRANCH = "master"  && docker push vyo2003/ubuntu-boost:latest || true
+test $TRAVIS_BRANCH = "rolling" && docker push vyo2003/ubuntu-boost:rolling || true
+test $TRAVIS_BRANCH = "baseimage" && docker push vyo2003/ubuntu-boost:baseimage || true
