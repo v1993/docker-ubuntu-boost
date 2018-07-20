@@ -1,5 +1,5 @@
 # Version: 0.1.0
-FROM ubuntu:latest
+FROM phusion/baseimage:master
 MAINTAINER Valeri Ochinski <v19930312@gmail.com>
 
 ENV BOOST_VERSION_DOT        1.67.0
@@ -31,4 +31,4 @@ RUN apt-get update -qq && \
     rm -rf "${BOOST_BUILD_DIR}" && \
     echo "Rm ${BOOST_BUILD_DIR} OK"
 
-CMD ["/bin/sh"]
+CMD ["/sbin/my_init"]
