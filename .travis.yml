@@ -1,0 +1,24 @@
+sudo: required
+
+language: generic
+
+services:
+  - docker
+
+addons:
+  apt:
+    packages:
+      - docker-ce
+
+script:
+  - test $TRAVIS_BRANCH = "master"  && docker build -t vyo2003/ubuntu-boost:latest .
+  - test $TRAVIS_BRANCH = "rolling" && docker build -t vyo2003/ubuntu-boost:rolling .
+  - test $TRAVIS_BRANCH = "baseimage" && docker build -t vyo2003/ubuntu-boost:baseimage .
+
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
+    branch: rolling
+    branch: baseimage
