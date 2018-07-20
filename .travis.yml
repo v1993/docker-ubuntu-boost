@@ -15,6 +15,5 @@ script:
   - if [ $TRAVIS_BRANCH = "rolling" ]; then docker build -t vyo2003/ubuntu-boost:rolling .; fi
   - if [ $TRAVIS_BRANCH = "baseimage" ]; then docker build -t vyo2003/ubuntu-boost:baseimage .; fi
 
-deploy:
-  provider: script
-  script: bash docker_push
+after_success:
+  - bash docker_push
