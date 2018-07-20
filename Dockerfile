@@ -2,11 +2,11 @@
 FROM ubuntu:rolling
 MAINTAINER Valeri Ochinski <v19930312@gmail.com>
 
-ENV BOOST_VERSION_DOT        1.67.0 \
-    BOOST_VERSION_UNDERSCORE 1_67_0 \
-    BOOST_BUILD_DIR          /root/boost \
-    BOOST_TMP_DIR            /tmp/boost \
-    BOOST_ARCHIVE            "${BOOST_TMP_DIR}/boost.zip"
+ENV        BOOST_VERSION_DOT="1.67.0" \
+    BOOST_VERSION_UNDERSCORE="1_67_0" \
+             BOOST_BUILD_DIR="/root/boost" \
+               BOOST_TMP_DIR="/tmp/boost" \
+               BOOST_ARCHIVE="/tmp/boost/boost.zip"
 
 RUN apt-get update -qq && \
     apt-get install -qq -y aria2 unzip apt-utils build-essential clang python-dev jam libicu-dev libbz2-dev liblzma-dev libboost-all-dev && \
