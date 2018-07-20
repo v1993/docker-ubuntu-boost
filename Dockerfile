@@ -8,12 +8,12 @@ ENV BOOST_BUILD_DIR          /root/boost
 ENV BOOST_TMP_DIR            /tmp/boost
 ENV BOOST_ARCHIVE            "${BOOST_TMP_DIR}/boost.zip"
 
-RUN apt-get update -qq
-RUN apt-get install -qq -y aria2 unzip apt-utils; apt-get clean
-RUN apt-get install -qq -y build-essential clang python-dev jam libicu-dev libbz2-dev liblzma-dev libboost-all-dev; apt-get clean
+RUN apt-get update -qq && \
+    apt-get install -qq -y aria2 unzip apt-utils build-essential clang python-dev jam libicu-dev libbz2-dev liblzma-dev libboost-all-dev && \
+    apt-get clean
 
-RUN mkdir -p "${BOOST_BUILD_DIR}" "${BOOST_TMP_DIR}"
-RUN aria2c -q -o "${BOOST_ARCHIVE}" "https://dl.bintray.com/boostorg/release/${BOOST_VERSION_DOT}/source/boost_${BOOST_VERSION_UNDERSCORE}.zip" && \
+RUN mkdir -p "${BOOST_BUILD_DIR}" "${BOOST_TMP_DIR}" && \
+    aria2c -q -o "${BOOST_ARCHIVE}" "https://dl.bintray.com/boostorg/release/${BOOST_VERSION_DOT}/source/boost_${BOOST_VERSION_UNDERSCORE}.zip" && \
     echo "Download OK" && \
     unzip -q "${BOOST_ARCHIVE}" -d "${BOOST_TMP_DIR}" && \
     echo "Unzip OK" && \
