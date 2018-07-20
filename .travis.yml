@@ -11,9 +11,9 @@ addons:
       - docker-ce
 
 script:
-  - test $TRAVIS_BRANCH = "master"  && docker build -t vyo2003/ubuntu-boost:latest . || true
-  - test $TRAVIS_BRANCH = "rolling" && docker build -t vyo2003/ubuntu-boost:rolling . || true
-  - test $TRAVIS_BRANCH = "baseimage" && docker build -t vyo2003/ubuntu-boost:baseimage . || true
+  - if [ $TRAVIS_BRANCH = "master" ]; then docker build -t vyo2003/ubuntu-boost:latest .; fi
+  - if [ $TRAVIS_BRANCH = "rolling" ]; then docker build -t vyo2003/ubuntu-boost:rolling .; fi
+  - if [ $TRAVIS_BRANCH = "baseimage" ]; then docker build -t vyo2003/ubuntu-boost:baseimage .; fi
 
 deploy:
   provider: script
