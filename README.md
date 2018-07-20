@@ -4,9 +4,9 @@ Simple dockerfile for providing ubuntu with last boost
 Current boost version is 1.67.0.
 
 This repository uses travis-ci for regular builds. It include three editions:
-1. latest = ubuntu:latest
-2. rolling = ubuntu:rolling
-3. baseimage = baseimage:master
+1. latest = ubuntu:latest [![Build Status](https://travis-ci.org/v1993/docker-ubuntu-boost.svg?branch=master)](https://travis-ci.org/v1993/docker-ubuntu-boost)
+2. rolling = ubuntu:rolling [![Build Status](https://travis-ci.org/v1993/docker-ubuntu-boost.svg?branch=rolling)](https://travis-ci.org/v1993/docker-ubuntu-boost)
+3. baseimage = baseimage:master [![Build Status](https://travis-ci.org/v1993/docker-ubuntu-boost.svg?branch=baseimage)](https://travis-ci.org/v1993/docker-ubuntu-boost)
 
 # Variables (useful for you):
 
