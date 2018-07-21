@@ -3,12 +3,12 @@ m4 -I . Dockerfile.m4 > Dockerfile
 
 case $TRAVIS_BRANCH in
 	master)
-		docker push vyo2003/ubuntu-boost:latest
+		docker build -t vyo2003/ubuntu-boost:latest .
 		;;
 	rolling)
-		docker push vyo2003/ubuntu-boost:rolling
+		docker build -t vyo2003/ubuntu-boost:rolling .
 		;;
 	baseimage)
-		docker push vyo2003/ubuntu-boost:latest
+		docker build -t vyo2003/ubuntu-boost:latest .
 		;;
 esac
