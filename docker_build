@@ -1,5 +1,5 @@
 #!/bin/bash
-cpp -o Dockerfile Dockerfile.in
+m4 -I . Dockerfile.m4 > Dockerfile
 
 case $TRAVIS_BRANCH in
 	master)
