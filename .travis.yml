@@ -11,7 +11,7 @@ addons:
       - docker-ce
 
 script:
-  - buildtools/docker_build
+  - bash buildtools/docker_build
 
 after_success:
   - bash buildtools/docker_push
