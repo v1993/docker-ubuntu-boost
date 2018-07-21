@@ -11,3 +11,4 @@ case $TRAVIS_BRANCH in
 	baseimage)
 		docker push vyo2003/ubuntu-boost:latest
 		;;
+esac
