@@ -1,0 +1,13 @@
+#!/bin/bash
+cpp -o Dockerfile Dockerfile.in
+
+case $TRAVIS_BRANCH in
+	master)
+		docker push vyo2003/ubuntu-boost:latest
+		;;
+	rolling)
+		docker push vyo2003/ubuntu-boost:rolling
+		;;
+	baseimage)
+		docker push vyo2003/ubuntu-boost:latest
+		;;
