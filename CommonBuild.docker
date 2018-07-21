@@ -27,7 +27,7 @@ RUN apt-get update -qq && \
     echo "Build and install OK" && \
     rm -rf "${BOOST_BUILD_DIR}" && \
     echo "Rm ${BOOST_BUILD_DIR} OK" && \
-    apt-get purge aria2 unzip clang jam libicu-dev libbz2-dev liblzma-dev && \
-    apt-get autoremove --purge && \
+    apt-get purge -y aria2 unzip clang jam libbz2-dev liblzma-dev && \
+    apt-get autoremove -y --purge && \
     apt-get clean && \
     echo "Apt cleaning OK"
